@@ -56,14 +56,14 @@ end
 local function OnCompletionMonitor()
     if monitor then 
         -- Display greeting
-        monitor.write(math.random(greetings[1,#greetings]))
+        monitor.write(greetings[math.random(1,#greetings)])
         monitor.setCursorPos(1,2)
         monitor.write("There is a monitor connected")
         monitor.setCursorPos(1,3)
         monitor.write("Modem connected: "..peripheral.isPresent(p_modem))
     else
         -- Display greeting
-        term.write(math.random(greetings[1,#greetings]))
+        monitor.write(greetings[math.random(1,#greetings)])
         term.setCursorPos(1,2)
         term.write("There is no monitor connected")
         term.setCursorPos(1,3)
