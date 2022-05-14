@@ -26,7 +26,7 @@ local function SetupMonitor()
         monitor.clear()
         monitor.setCursorPos(1,1)
     else
-        term.write("There is no connected monitor")
+        monitor = false
     end
 end
 
@@ -35,7 +35,7 @@ local function SetupModem()
         -- Wrap modem
         modem = peripheral.wrap(p_modem)
     else
-        term.write("There is no connected modem")
+        modem = false
     end
 end
 
