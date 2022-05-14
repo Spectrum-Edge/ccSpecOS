@@ -10,7 +10,10 @@ local p_modem = "back"
 local greetings = {
     "Hi Spectrum!!",
     "Hello Spectrum!",
-    "Beep boop!"
+    "Beep boop!",
+    "Now with an update function!",
+    "Devious",
+    "G'day"
 }
 
 -------- Peripheral setup --------
@@ -61,8 +64,7 @@ local function OnCompletionMonitor()
     end
 
     -- Display greeting
-    --term.write(greetings[math.random(1,#greetings)])
-    term.write("There is absolutely no way in hell this works wtf")
+    term.write(greetings[math.random(1,#greetings)])
     term.setCursorPos(1,2)
     if monitor then
         term.write("Monitor connected")

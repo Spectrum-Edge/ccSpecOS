@@ -2,7 +2,7 @@
 local function updateFile(fileName, url)
     local handle = http.get(url)
     local content = handle.readAll()
-    local file = fs.open("startup","w")
+    local file = fs.open(fileName,"w")
     file.write(content)
     file.close()
     handle.close()
