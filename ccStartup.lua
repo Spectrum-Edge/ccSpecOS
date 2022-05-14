@@ -44,6 +44,8 @@ local function SetupPeripherals()
     if pocket then
         -- Only set up modem if present
         SetupModem()
+        -- Set everything else to false so it doesn't break!!
+        monitor = false
     else
         -- Actually set up all peripherals
         SetupMonitor()
