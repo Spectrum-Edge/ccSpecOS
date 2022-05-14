@@ -53,26 +53,31 @@ end
 
 -------- End of peripheral setup --------
 
+-------- Normal functions --------
 local function OnCompletionMonitor()
     if monitor then 
-        -- Display greeting
-        monitor.write(greetings[math.random(1,#greetings)])
-        monitor.setCursorPos(1,2)
-        monitor.write("There is a monitor connected")
-        monitor.setCursorPos(1,3)
-        monitor.write("Modem connected: "..peripheral.isPresent(p_modem))
+        -- Set monitor as term
+        term.redirect(monitor)
+    end
+
+    -- Display greeting
+    monitor.write(greetings[math.random(1,#greetings)])
+    term.setCursorPos(1,2)
+    if monitor then
+        term.write("Monitor connected")
     else
-        -- Display greeting
-        monitor.write(greetings[math.random(1,#greetings)])
-        term.setCursorPos(1,2)
-        term.write("There is no monitor connected")
-        term.setCursorPos(1,3)
-        term.write("Modem connected: "..peripheral.isPresent(p_modem))
+        term.write("Monitor not connected")
+    end
+    term.setCursorPos(1,3)
+    if modem then
+        term.write("Modem connected")
+    else
+        term.write("Modem not connected")
     end
 end
 
 
 
--- Executed on startup
+-------- Executed on startup ------
 SetupPeripherals()
 OnCompletionMonitor()
