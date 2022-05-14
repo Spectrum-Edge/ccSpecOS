@@ -74,8 +74,14 @@ local function OnCompletionMonitor()
     else
         term.write("Modem not connected")
     end
+    term.setCursorPos(1,4)
 end
 
 -------- Executed on startup ------
+-- Set up term
+term.clear()
+term.setCursorPos(1,1)
+
+-- Do other stuff
 SetupPeripherals()
 OnCompletionMonitor()
