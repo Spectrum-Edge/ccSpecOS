@@ -61,7 +61,8 @@ local function OnCompletionMonitor()
     end
 
     -- Display greeting
-    term.write(greetings[math.random(1,#greetings)])
+    --term.write(greetings[math.random(1,#greetings)])
+    term.write("There is absolutely no way in hell this works wtf")
     term.setCursorPos(1,2)
     if monitor then
         term.write("Monitor connected")
