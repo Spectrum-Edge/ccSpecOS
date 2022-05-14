@@ -1,9 +1,9 @@
 ---@diagnostic disable: unused-function
 
 -- Peripheral setup
-local monitor = nil
+local monitor = false
 local p_monitor = "right"
-local modem = nil
+local modem = false
 local p_modem = "back"
 
 -- Constants
@@ -26,7 +26,7 @@ local function SetupMonitor()
         monitor.clear()
         monitor.setCursorPos(1,1)
     else
-        monitor = false
+        -- No monitor connected
     end
 end
 
@@ -35,7 +35,7 @@ local function SetupModem()
         -- Wrap modem
         modem = peripheral.wrap(p_modem)
     else
-        modem = false
+        -- No modem connected
     end
 end
 
@@ -44,8 +44,6 @@ local function SetupPeripherals()
     if pocket then
         -- Only set up modem if present
         SetupModem()
-        -- Set everything else to false so it doesn't break!!
-        monitor = false
     else
         -- Actually set up all peripherals
         SetupMonitor()
@@ -77,8 +75,6 @@ local function OnCompletionMonitor()
         term.write("Modem not connected")
     end
 end
-
-
 
 -------- Executed on startup ------
 SetupPeripherals()
