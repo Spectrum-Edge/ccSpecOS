@@ -11,4 +11,6 @@ end
 -- Get github version of update (write mode w overwrites any existing content)
 updateFile("startup", "https://raw.githubusercontent.com/Spectrum-Edge/ccSpecOS/main/ccStartup.lua")
 updateFile("update", "https://raw.githubusercontent.com/Spectrum-Edge/ccSpecOS/main/ccUpdate.lua")
-updateFile("shutdown", "https://raw.githubusercontent.com/Spectrum-Edge/ccSpecOS/main/ccShutdown.lua")
+
+-- Rai's IRC thing
+updateFile("IRC", "https://protogen.lol/cdn/IRC.lua")
