@@ -16,6 +16,9 @@ local greetings = {
     "G'day"
 }
 
+-- global variables
+local textSize = 0.75
+
 -- This is kind of important
 local function newLine()
     local x,y = term.getCursorPos()
@@ -32,7 +35,7 @@ local function SetupMonitor()
         -- Set monitor color scheme
 
         -- Resizing?
-        monitor.setTextScale()
+        monitor.setTextScale(textSize)
 
         -- Clear and set cursor position
         monitor.clear()
