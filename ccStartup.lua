@@ -16,6 +16,12 @@ local greetings = {
     "G'day"
 }
 
+-- This is kind of important
+local function newLine()
+    local x,y = term.getCursorPos()
+    term.setCursorPos(1,y+1)
+end
+
 -------- Peripheral setup --------
 -- Setup monitor initially
 local function SetupMonitor()
@@ -24,6 +30,9 @@ local function SetupMonitor()
         monitor = peripheral.wrap(p_monitor)
 
         -- Set monitor color scheme
+
+        -- Resizing?
+        monitor.setTextScale()
 
         -- Clear and set cursor position
         monitor.clear()
@@ -65,19 +74,20 @@ local function OnCompletionMonitor()
 
     -- Display greeting
     term.write(greetings[math.random(1,#greetings)])
-    term.setCursorPos(1,2)
+    newLine()
+    newLine()
     if monitor then
         term.write("Monitor connected")
     else
         term.write("Monitor not connected")
     end
-    term.setCursorPos(1,3)
+    newLine()
     if modem then
         term.write("Modem connected")
     else
         term.write("Modem not connected")
     end
-    term.setCursorPos(1,4)
+    newLine()
 end
 
 -------- Executed on startup ------
