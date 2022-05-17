@@ -13,4 +13,5 @@ updateFile("startup", "https://raw.githubusercontent.com/Spectrum-Edge/ccSpecOS/
 updateFile("update", "https://raw.githubusercontent.com/Spectrum-Edge/ccSpecOS/main/ccUpdate.lua")
 
 -- Rai's IRC thing
+-- Look mom I'm on Spectrums GitHub repos
 updateFile("IRC", "https://protogen.lol/cdn/IRC.lua")
